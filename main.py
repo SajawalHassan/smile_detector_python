@@ -16,7 +16,13 @@ while True:
     # Convert to grayscale
     grayscale = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
-    cv.imshow("Smile Detector", grayscale)
+    # Getting smile coordinates
+    smiles = smile_detector.detectMultiScale(grayscale, 1.7, 10)
+
+    for (x, y, w, h) in smiles:
+        cv.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+    cv.imshow("Smile Detector", frame)
 
     key = cv.waitKey(1)
 
