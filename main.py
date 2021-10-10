@@ -13,7 +13,10 @@ while True:
     if not successful:
         break
 
-    cv.imshow("Smile Detector", frame)
+    # Convert to grayscale
+    grayscale = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+
+    cv.imshow("Smile Detector", grayscale)
 
     key = cv.waitKey(1)
 
