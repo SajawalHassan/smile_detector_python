@@ -3,8 +3,8 @@ import cv2 as cv
 face_detector = cv.CascadeClassifier("haarcascade_frontalface_default.xml")
 smile_detector = cv.CascadeClassifier("haarcascade_smile.xml")
 
-# Read video (change filename to 0 if need webcam)
-video = cv.VideoCapture("videos/vid_test_smile.3gp")
+# Read video
+video = cv.VideoCapture(0)
 
 while True:
     # Read currunt frame
